@@ -18,7 +18,7 @@ return {
 				lualine_c = { "filename" }, -- Zeigt den aktuellen Dateinamen
 				lualine_x = { "filetype" }, -- Zeigt den Dateityp (Lua, Python, etc.)
 				lualine_y = { "progress" }, -- Fortschrittsanzeige in der Datei
-				lualine_z = { "location" }, -- Zeigt die Cursor-Position (Zeile/Spalte)
+				lualine_z = { "os.date('%H:%M')" }, -- Zeigt die aktuelle Uhrzeit
 			},
 			globalstatus = true,
 		})
