@@ -22,4 +22,5 @@ return {
 	{ require("nexisnv.gitblame") },
 	{ require("nexisnv.gitgutter") },
 	{ require("nexisnv.visualmulti") },
+	{ require("nexisnv.surround") },
 }
