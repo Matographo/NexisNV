@@ -1,4 +1,3 @@
-local easy = _G.easy.projectmanager
 return {
 	'charludo/projectmgr.nvim',
 	lazy = false, -- important!
@@ -6,7 +5,7 @@ return {
 		require("projectmgr").setup({
 
 			autogit = {
-				enabled = easy.auto_pull or true,
+				enabled = true,
 				command = "git pull --ff-only",
 			},
 			reopen = false,

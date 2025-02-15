@@ -51,12 +51,12 @@ brew install neovim
 ### 2️⃣ Clone the Repository  
 Make sure you don't have your previous Neovim Config in your path
 ```sh
-git clone https://github.com/yourusername/NexisNV.git ~/.config/nvim
+git clone https://github.com/Matographo/NexisNV.git ~/.config/nvim
 ```
 
 If you want, you can also run this command to automatically install all by itself:
 ```sh
-git clone https://github.com/yourusername/NexisNV.git ~/.config/nvim/nexisnv && bash ~/.config/nvim/nexisnv/install.sh
+git clone https://github.com/Matographo/NexisNV.git ~/.config/nvim/nexisnv && bash ~/.config/nvim/nexisnv/install.sh
 ```
 
 ### 3️⃣ Launch NeoVim and Install Plugins  
