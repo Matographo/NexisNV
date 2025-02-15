@@ -41,3 +41,8 @@ map("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", { noremap = true, s
 
 
 
+-- LazyGit --
+map("n", "<leader>gg", ":LazyGit<CR>", { desc = "Open LazyGit Window" })
+map("n", "gC", ":LazyGit<CR>ac<CR>", { desc = "Commit Changes" })
+map("n", "gP", ":LazyGit<CR>Pq", { desc = "Push Changes" })
+map("n", "gp", ":LazyGit<CR>pq", { desc = "Pull Changes" })
