@@ -1,32 +1,4 @@
 return {
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	dependencies = {
-	-- 		"hrsh7th/cmp-buffer",
-	-- 		"hrsh7th/cmp-path",
-	-- 	},
-	-- 	config = function()
-	-- 		local cmp = require("cmp")
-	--
-	-- 		cmp.setup({
-	-- 			enabled = function()
-	-- 				-- Nur für projectmgr.nvim aktivieren
-	-- 				local buftype = vim.api.nvim_buf_get_option(0, "filetype")
-	-- 				return buftype == "projectmgr"
-	-- 			end,
-	-- 			sources = {
-	-- 				{ name = "buffer" },
-	-- 				{ name = "path" },
-	-- 			},
-	-- 			mapping = {
-	-- 				["<C-j>"] = cmp.mapping.select_next_item(),
-	-- 				["<C-k>"] = cmp.mapping.select_prev_item(),
-	-- 				["<CR>"] = cmp.mapping.confirm({ select = true }),
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- }
-
 	"hrsh7th/nvim-cmp",
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- Buffer-Kompletion (zuvor gesehene Wörter)
@@ -36,16 +8,73 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- Snippet-Kompletion
 		"L3MON4D3/LuaSnip", -- Snippet-Engine
 		"rafamadriz/friendly-snippets", -- Vorgefertigte Snippets
-		"hrsh7th/cmp-emoji"
+		"hrsh7th/cmp-emoji",
+		"onsails/lspkind-nvim",
 	},
 	event = "InsertEnter",
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+		local lspkind = require("lspkind")
+		local types = require("cmp.types")
+		local str = require("cmp.utils.str")
 
 		require("luasnip.loaders.from_vscode").lazy_load() -- Lädt VSCode-Snippets
 
 		cmp.setup({
+			experimental = {
+				ghost_text = true,
+			},
+			sources = cmp.config.sources({
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "path" },
+				{ name = "emoji" },
+			}),
+			window = {
+				completion = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),
+				documentation = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),
+			},
+			formatting = {
+				fields = {
+					cmp.ItemField.Abbr,
+					cmp.ItemField.Kind,
+					cmp.ItemField.Menu,
+				},
+				format = lspkind.cmp_format {
+					mode = "symbol_text",
+					maxwidth = 60,
+					before = function(entry, vim_item)
+						vim_item.menu = ({
+							nvim_lsp = "ﲳ",
+							nvim_lua = "",
+							treesitter = "",
+							path = "ﱮ",
+							buffer = "﬘",
+							zsh = "",
+							luasnip = "",
+							spell = "暈",
+						})[entry.source.name]
+
+						-- Get the full snippet (and only keep first line)
+						local word = entry:get_insert_text()
+						if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+							word = vim.lsp.util.parse_snippet(word)
+						end
+						word = str.oneline(word)
+						if
+						    entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+						    and string.sub(vim_item.abbr, -1, -1) == "~"
+						then
+							word = word .. "~"
+						end
+						vim_item.abbr = word
+
+						return vim_item
+					end,
+				},
+			},
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body) -- Verwende LuaSnip für Snippets
@@ -56,14 +85,9 @@ return {
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping.select_next_item(),
 				["<S-Tab>"] = cmp.mapping.select_prev_item(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
 			}),
-			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-				{ name = "emoji" },
-			})
 		})
 	end
 
