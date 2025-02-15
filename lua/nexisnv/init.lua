@@ -10,7 +10,7 @@ return {
 	{ require("nexisnv.lazygit") },
 	{ require("nexisnv.lualine") },
 	{ require("nexisnv.bufferline") },
-	{ require("nexisnv.posession") },
+	-- { require("nexisnv.posession") },
 	{ require("nexisnv.projectmgr") },
 	{ require("nexisnv.neotree") },
 	{ "nvim-neotest/nvim-nio", },
