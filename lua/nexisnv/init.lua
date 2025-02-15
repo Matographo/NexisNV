@@ -21,4 +21,5 @@ return {
 	{ require("nexisnv.leap") },
 	{ require("nexisnv.gitblame") },
 	{ require("nexisnv.gitgutter") },
+	{ require("nexisnv.visualmulti") },
 }

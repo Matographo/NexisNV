@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-
+local nmap = vim.api.nvim_set_keymap
 
 
 -- Neotree --
@@ -81,3 +81,8 @@ map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List
 
 -- Git Blame --
 map("n", "<leader>gb", ":GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
+
+
+-- Multi Cursor --
+nmap('n', '<C-j>', '<C-Down>', { noremap = false })
+nmap('n', '<C-k>', '<C-Up>', { noremap = false })
