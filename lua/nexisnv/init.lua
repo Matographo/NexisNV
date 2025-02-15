@@ -2,6 +2,7 @@ return {
 	{ require("nexisnv.dashboard") },
 	{ require("nexisnv.themery") },
 	{ require("nexisnv.toggleterm") },
+	-- { require("nexisnv.blinkcmp") },
 	{ require("nexisnv.autocmp") },
 	{ require("nexisnv.telescope") },
 	{ require("nexisnv.lspconfig") },
@@ -10,12 +11,12 @@ return {
 	{ require("nexisnv.lazygit") },
 	{ require("nexisnv.lualine") },
 	{ require("nexisnv.bufferline") },
-	-- { require("nexisnv.posession") },
 	{ require("nexisnv.projectmgr") },
 	{ require("nexisnv.neotree") },
 	{ "nvim-neotest/nvim-nio", },
 	{ require("nexisnv.nvimdap") },
 	{ require("nexisnv.neotest") },
 	{ require("nexisnv.whichkey") },
-	{ require("nexisnv.markdownrender")}
+	{ require("nexisnv.markdownrender") },
+	{ require("nexisnv.trouble") },
 }
