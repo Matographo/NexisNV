@@ -8,6 +8,7 @@ return {
 			options = {
 				theme = "auto", -- Passt sich automatisch an dein Farbschema an
 				icons_enabled = true, -- Symbole aktivieren
+				globalstatus = true, -- Statuszeile immer anzeigen
 				section_separators = { left = '', right = '' },
 				component_separators = { left = '', right = '' }
 			},
