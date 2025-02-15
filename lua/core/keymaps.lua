@@ -8,8 +8,6 @@ map("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
 
 -- Copilot --
 vim.api.nvim_set_keymap('i', '<C-l>', 'copilot#Accept("<CR>")', { expr = true, noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-S-j>', 'copilot-i_ALT-]', { expr = true, noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<C-S-k>', 'copilot-i_ALT-[', { expr = true, noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-h>', 'copilot-i_CTRL-]', { expr = true, noremap = true, silent = true })
 function ToggleCopilot()
 	if vim.g.copilot_enabled == nil or vim.g.copilot_enabled then

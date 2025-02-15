@@ -20,4 +20,5 @@ return {
 	{ require("nexisnv.trouble") },
 	{ require("nexisnv.leap") },
 	{ require("nexisnv.gitblame") },
+	{ require("nexisnv.gitgutter") },
 }

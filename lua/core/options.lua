@@ -6,3 +6,4 @@ op.clipboard = "unnamedplus"
 
 op.timeout = true
 op.timeoutlen = 10000
+vim.o.signcolumn = "yes"
