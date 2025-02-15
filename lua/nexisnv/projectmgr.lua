@@ -36,7 +36,7 @@ return {
 vim.api.nvim_create_autocmd({"VimLeavePre"}, {
     callback = function()
         local possession = require("possession")
-        local projectmgr = require("projectmgr")
+        local projectmgr = require("projectmgr.file_adapter")
         local project = projectmgr.get_current_project()
 
         if project then
