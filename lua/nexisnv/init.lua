@@ -2,7 +2,6 @@ return {
 	{ require("nexisnv.dashboard") },
 	{ require("nexisnv.themery") },
 	{ require("nexisnv.toggleterm") },
-	-- { require("nexisnv.blinkcmp") },
 	{ require("nexisnv.autocmp") },
 	{ require("nexisnv.telescope") },
 	{ require("nexisnv.lspconfig") },
@@ -20,4 +19,5 @@ return {
 	{ require("nexisnv.markdownrender") },
 	{ require("nexisnv.trouble") },
 	{ require("nexisnv.leap") },
+	{ require("nexisnv.gitblame") },
 }
