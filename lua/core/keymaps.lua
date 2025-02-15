@@ -40,10 +40,10 @@ map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 
 
 -- Tab control --
-map("n", "<leader>gs", ":BufferLinePick<CR>", { desc = "Choose Tab" })
-map("n", "<leader>gt", ":BufferLineCycleNext<CR>", { desc = "Next Tab" })
-map("n", "<leader>gT", ":BufferLineCyclePrev<CR>", { desc = "Prev Tab" })
-map("n", "<leader>gq", ":bwipeout<CR>", { desc = "Close Tab" })
+map("n", "gs", ":BufferLinePick<CR>", { desc = "Choose Tab" })
+map("n", "<leader>gt", ":BufferLineCycleNext<CR>", { noremap =true, desc = "Next Tab" })
+map("n", "gT", ":BufferLineCyclePrev<CR>", { desc = "Prev Tab" })
+map("n", "gq", ":bwipeout<CR>", { desc = "Close Tab" })
 
 
 
