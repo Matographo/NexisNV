@@ -1,4 +1,4 @@
-A#!/bin/bash
+#!/bin/bash
 
 echo "Starting NexisNV Installation..."
 
@@ -18,7 +18,7 @@ BACKUP_DIR="$HOME/.config/nvim/old_config"
 GIT_REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Backup old Neovim configuration if it exists
-if [ -d "$NVIM_CONFIG" ]; then
+if [ "$(ls -1 $NVIM_CONFIG) | wc -l" -le 1 ]; then
   echo "Existing Neovim configuration found. Creating a backup..."
   
   # Move all files except the Git repository into the backup directory
@@ -30,6 +30,7 @@ if [ -d "$NVIM_CONFIG" ]; then
 
   # Zip the backup
   zip -r "$NVIM_CONFIG/old_config.zip" "$BACKUP_DIR"
+  rm -rf "$BACKUP_DIR"
   echo "Backup created at: $BACKUP_DIR"
 fi
 
