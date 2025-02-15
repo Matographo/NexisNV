@@ -1,4 +1,4 @@
-#!/bin/bash
+A#!/bin/bash
 
 echo "Starting NexisNV Installation..."
 
@@ -23,8 +23,8 @@ if [ -d "$NVIM_CONFIG" ]; then
   
   # Move all files except the Git repository into the backup directory
   mkdir -p "$BACKUP_DIR"
-  for file in $(ls -1 "$NVIM_CONFIG" | grep -vE "^($BACKUP_DIR|$GIT_REPO_DIR)$"); do
-      mv "$file" "$BACKUP_DIR/" || exit 1
+  for file in $(ls -1 "$NVIM_CONFIG" | grep -vE "^($(basename $BACKUP_DIR)|$($GIT_REPO_DIR))$"); do
+      mv "$NVIM_CONFIG/$file" "$BACKUP_DIR/$file" || exit 1
       rm -rf "$file"
   done
 
