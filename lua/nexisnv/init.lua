@@ -17,4 +17,5 @@ return {
 	{ require("nexisnv.nvimdap") },
 	{ require("nexisnv.neotest") },
 	{ require("nexisnv.whichkey") },
+	{ require("nexisnv.markdownrender")}
 }

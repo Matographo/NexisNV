@@ -2,9 +2,9 @@ vim.g.mapleader = " "
 
 local M = {}
 setmetatable(M, {
-  __index = function(_, key)
-    return nil
-  end,
+	__index = function(_, key)
+		return nil
+	end,
 })
 
 

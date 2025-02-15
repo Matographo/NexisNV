@@ -6,4 +6,3 @@ op.clipboard = "unnamedplus"
 
 op.timeout = true
 op.timeoutlen = 10000
-

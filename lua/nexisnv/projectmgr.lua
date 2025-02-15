@@ -16,5 +16,5 @@ return {
 				file_shutdown = "shutdown.sh",
 			},
 		})
-end
+	end
 }
