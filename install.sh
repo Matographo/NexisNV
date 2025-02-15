@@ -18,7 +18,7 @@ BACKUP_DIR="$HOME/.config/nvim/old_config"
 GIT_REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Backup old Neovim configuration if it exists
-if [ "$(ls -1 $NVIM_CONFIG) | wc -l" -le 1 ]; then
+if [ "$(ls -1 $NVIM_CONFIG | wc -l)" -le 1 ]; then
   echo "Existing Neovim configuration found. Creating a backup..."
   
   # Move all files except the Git repository into the backup directory
