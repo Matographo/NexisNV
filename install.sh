@@ -14,7 +14,7 @@ fi
 
 # Define paths
 NVIM_CONFIG="$HOME/.config/nvim"
-BACKUP_DIR="$HOME/.config/old_config"
+BACKUP_DIR="$HOME/.config/nvim/old_config"
 GIT_REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Backup old Neovim configuration if it exists
