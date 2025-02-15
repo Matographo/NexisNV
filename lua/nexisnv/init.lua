@@ -19,4 +19,5 @@ return {
 	{ require("nexisnv.whichkey") },
 	{ require("nexisnv.markdownrender") },
 	{ require("nexisnv.trouble") },
+	{ require("nexisnv.leap") },
 }
