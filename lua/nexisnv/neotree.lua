@@ -7,14 +7,15 @@ return {
 		"nvim-tree/nvim-web-devicons", -- Optional, für Icons
 		"MunifTanjim/nui.nvim",
 	},
-	event = "VeryLazy",
+	lazy = true,
+	cmd = "Neotree",
 	config = function()
 		require("neo-tree").setup({
 			close_if_last_window = true, -- Schließt Neo-tree, wenn es das letzte Fenster ist
 			popup_border_style = "rounded",
 			enable_git_status = true,
 			enable_diagnostics = true,
-			log_level = "warn",    -- 🔹 Verhindert nervige Meldungen
+			log_level = "warn",   -- 🔹 Verhindert nervige Meldungen
 			filesystem = {
 				follow_current_file = { enabled = true }, -- Setze `false`, falls `true` ist
 				hijack_netrw = true,

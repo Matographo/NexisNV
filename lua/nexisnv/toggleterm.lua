@@ -2,6 +2,7 @@ return {
 
 	"akinsho/toggleterm.nvim",
 	version = "*", -- Neueste Version automatisch holen
+	cmd = "ToggleTerm",
 	config = function()
 		require("toggleterm").setup({
 			size = 20, -- Höhe des Terminals (bei horizontalem Modus)
