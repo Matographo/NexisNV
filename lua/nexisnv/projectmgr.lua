@@ -3,7 +3,6 @@ return {
 	lazy = false, -- important!
 	config = function()
 		require("projectmgr").setup({
-
 			autogit = {
 				enabled = true,
 				command = "git pull --ff-only",

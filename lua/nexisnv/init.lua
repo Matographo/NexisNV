@@ -16,4 +16,5 @@ return {
 	{ "nvim-neotest/nvim-nio", },
 	{ require("nexisnv.nvimdap") },
 	{ require("nexisnv.neotest") },
+	{ require("nexisnv.whichkey") },
 }
