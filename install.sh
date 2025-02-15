@@ -14,22 +14,23 @@ fi
 
 # Define paths
 NVIM_CONFIG="$HOME/.config/nvim"
-BACKUP_DIR="$HOME/.config/old_config"
+BACKUP_DIR="$HOME/.config/nvim/old_config"
 GIT_REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Backup old Neovim configuration if it exists
-if [ -d "$NVIM_CONFIG" ]; then
+if [ "$(ls -1 $NVIM_CONFIG | wc -l)" -gt 1 ]; then
   echo "Existing Neovim configuration found. Creating a backup..."
   
   # Move all files except the Git repository into the backup directory
   mkdir -p "$BACKUP_DIR"
-  for file in $(ls -1 | grep -vE "^(BACKUP_DIR|GIT_REPO_DIR)$"); do
-      mv "$file" "$BACKUP_DIR/" || exit 1
+  for file in $(ls -1 "$NVIM_CONFIG" | grep -vE "^($(basename $BACKUP_DIR)|$(basename $GIT_REPO_DIR))$"); do
+      mv "$NVIM_CONFIG/$file" "$BACKUP_DIR/$file" || exit 1
       rm -rf "$file"
   done
 
   # Zip the backup
   zip -r "$NVIM_CONFIG/old_config.zip" "$BACKUP_DIR"
+  rm -rf "$BACKUP_DIR"
   echo "Backup created at: $BACKUP_DIR"
 fi
 
