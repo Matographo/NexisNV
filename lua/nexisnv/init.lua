@@ -24,4 +24,5 @@ return {
 	{ require("nexisnv.visualmulti") },
 	{ require("nexisnv.surround") },
 	{ require("nexisnv.octo") },
+	{ require("nexisnv.vimtex") },
 }
