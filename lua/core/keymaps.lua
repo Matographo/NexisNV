@@ -148,3 +148,10 @@ map("n", "<leader>ghml", ":Gh milestone list<CR>", { desc = "List Milestones" })
 -- Dadbod --
 map("n", "<leader>db", ":DBUIToggle<CR>", { desc = "Toggle DBUI" })
 map("n", "<leader>de", ":DBUIExecuteQuery<CR>", { desc = "Execute Query" })
+
+
+
+-- Treesitter Text Objects --
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)

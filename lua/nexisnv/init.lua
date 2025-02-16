@@ -8,6 +8,7 @@ return {
 	{ require("nexisnv.lspconfig") },
 	{ require("nexisnv.mason") },
 	{ require("nexisnv.treesitter") },
+	{ require("nexisnv.treesitter_textobject") },
 	{ require("nexisnv.lazygit") },
 	{ require("nexisnv.lualine") },
 	{ require("nexisnv.bufferline") },
