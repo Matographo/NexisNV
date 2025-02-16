@@ -23,4 +23,5 @@ return {
 	{ require("nexisnv.gitgutter") },
 	{ require("nexisnv.visualmulti") },
 	{ require("nexisnv.surround") },
+	{ require("nexisnv.octo") },
 }
