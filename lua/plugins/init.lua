@@ -1,5 +1,4 @@
 return {
-	{
-		"github/copilot.vim",
-	},
+	{ "github/copilot.vim" },
+	{ require("plugins.obsidian") },
 }
