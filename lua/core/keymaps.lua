@@ -155,3 +155,10 @@ map("n", "<leader>de", ":DBUIExecuteQuery<CR>", { desc = "Execute Query" })
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
+
+
+
+-- Hardtime --
+map("n", "<leader>htt", ":Hardtime toggle<CR>", { desc = "Toggle Hardtime" })
+map("n", "<leader>hte", ":Hardtime enable<CR>", { desc = "Toggle Cursor" })
+map("n", "<leader>htd", ":Hardtime disable<CR>", { desc = "Toggle Cursor Line" })
