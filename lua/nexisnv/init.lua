@@ -25,4 +25,5 @@ return {
 	{ require("nexisnv.surround") },
 	{ require("nexisnv.octo") },
 	{ require("nexisnv.vimtex") },
+	{ require("nexisnv.align") },
 }

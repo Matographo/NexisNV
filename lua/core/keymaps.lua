@@ -3,6 +3,11 @@ local nmap = vim.api.nvim_set_keymap
 require("core.functions")
 
 
+
+-- Ideas --
+map("n", "=a", "ggVG=", { desc = "Indent All" })
+
+
 -- Neotree --
 map("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
 
