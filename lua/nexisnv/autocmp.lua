@@ -10,6 +10,7 @@ return {
 		"rafamadriz/friendly-snippets", -- Vorgefertigte Snippets
 		"hrsh7th/cmp-emoji",
 		"onsails/lspkind-nvim",
+		"tpope/vim-dadbod",
 	},
 	event = "InsertEnter",
 	config = function()
@@ -31,6 +32,7 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "emoji" },
+				{ name = "cmp_dadbod" },
 			}),
 			window = {
 				completion = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),

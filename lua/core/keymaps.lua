@@ -144,3 +144,7 @@ map("n", "<leader>ghml", ":Gh milestone list<CR>", { desc = "List Milestones" })
 -- map("n", "<leader>ghra", ":Gh reviewer add ", { desc = "Add Reviewed" })
 -- map("n", "<leader>ghrr", ":Gh reaction ", { desc = "Add a Reaction" })
 
+
+-- Dadbod --
+map("n", "<leader>db", ":DBUIToggle<CR>", { desc = "Toggle DBUI" })
+map("n", "<leader>de", ":DBUIExecuteQuery<CR>", { desc = "Execute Query" })
