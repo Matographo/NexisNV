@@ -1,26 +1,40 @@
 local M = {}
 
 function M.Init(dap)
-	dap.adapters.java = function(callback)
-	  local mason_registry = require("mason-registry")
-	  local jdtls = mason_registry.get_package("java-debug-adapter")
-	  local jar_path = jdtls:get_install_path() .. "/extension/server/com.microsoft.java.debug.plugin.jar"
+	-- dap.adapters.java = {
+	-- 	type = "server",
+	-- 	host = "127.0.0.1",
+	-- 	port = 5005,  -- Der Standardport für JVM-Debugging
+	-- }
 
-	  callback({
-	    type = "executable",
-	    command = "java",
-	    args = { "-jar", jar_path }
-	  })
-	end
-
+	-- dap.configurations.java = {
+	-- 	{
+	-- 		type = "java",
+	-- 		request = "attach",
+	-- 		name = "Attach to Maven Process",
+	-- 		hostName = "127.0.0.1",
+	-- 		port = 5005,
+	-- 	},
+	-- }
 	dap.configurations.java = {
-	  {
-	    type = "java",
-	    request = "attach",
-	    name = "Maven Debugging",
-	    hostName = "127.0.0.1",
-	    port = 5005
-	  }
-	}end
+		{
+			type = "java",
+			request = "attach",
+			name = "Debug (Attach) - Remote",
+			hostName = "127.0.0.1",
+			port = 5005,
+		},
+		{
+			classPaths = {}, -- Automatisch von `nvim-jdtls` gesetzt
+			projectName = "meinProjekt",
+			javaExec = "java",
+			mainClass = "com.example.Main",
+			modulePaths = {}, -- Falls du Java 9+ Module nutzt
+			name = "Launch Main",
+			request = "launch",
+			type = "java"
+		}
+	}
+end
 
 return M

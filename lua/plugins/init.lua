@@ -1,5 +1,5 @@
 return {
 	{ "github/copilot.vim" },
 	{ require("plugins.obsidian") },
-	{ require("plugins.hardtime") },
+	-- { require("plugins.hardtime") },
 }

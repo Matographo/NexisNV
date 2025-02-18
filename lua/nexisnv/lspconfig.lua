@@ -1,9 +1,8 @@
 return {
-
-
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
+		{ "mfussenegger/nvim-jdtls" },
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true }, },
 	config = function()
@@ -94,28 +93,32 @@ return {
 			end,
 
 			-- 🔧 Spezielle Konfiguration für `jdtls` (Java)
-			--  ["jdtls"] = function()
-			--    local jdtls = require("jdtls")
-			--    local home = vim.fn.expand("~")
-			--    local workspace_dir = home .. "/.cache/jdtls/workspace/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-			--
-			--    local config = {
-			--      cmd = { "jdtls" },
-			--      root_dir = lspconfig.util.root_pattern("pom.xml", "gradlew", ".git"),
-			--      capabilities = capabilities,
-			--      init_options = {
-			-- workspaceFolders = { workspace_dir },
-			--      },
-			--    }
-			--
-			--    -- Autostart für Java-Dateien
-			--    vim.api.nvim_create_autocmd("FileType", {
-			--      pattern = "java",
-			--      callback = function()
-			-- jdtls.start_or_attach(config)
-			--      end,
-			--    })
-			--  end,
+			["jdtls"] = function()
+				local jdtls = require("jdtls")
+				local lspconfig = require("lspconfig")
+				local home = vim.fn.expand("~")
+				local workspace_dir = home .. "/.cache/jdtls/workspace/" .. vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
+
+				local config = {
+					cmd = {
+						home .. "/.local/share/nvim/mason/bin/jdtls", -- <== WICHTIG
+						"-data", workspace_dir,
+					},
+					root_dir = lspconfig.util.root_pattern("pom.xml", "gradlew", ".git"),
+					capabilities = capabilities,
+					init_options = {
+						workspaceFolders = { workspace_dir },
+					},
+				}
+
+				-- Autostart für Java-Dateien
+				vim.api.nvim_create_autocmd("FileType", {
+					pattern = "java",
+					callback = function()
+						jdtls.start_or_attach(config)
+					end,
+				})
+			end,
 			["svelte"] = function()
 				-- configure svelte server
 				lspconfig["svelte"].setup({

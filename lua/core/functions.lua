@@ -42,3 +42,11 @@ newfunc("Ghp", function(opts)
 		print("Nutze: :GHP <Filter>, z.B. :GHP assigned")
 	end
 end, { nargs = "?" })
+
+
+-- DAP --
+newfunc("DapJavaContinue", function(opts)
+	vim.fn.jobstart("mvnDebug exec:java", { detach = true })
+	vim.cmd("lua require('dap').continue()")
+	vim.fn.jobstart("mvnDebug exec:java", { detach = true })
+end, { nargs = 0 })

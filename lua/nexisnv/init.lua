@@ -28,4 +28,5 @@ return {
 	{ require("nexisnv.octo") },
 	{ require("nexisnv.vimtex") },
 	{ require("nexisnv.align") },
+	{ require("nexisnv.lazydocker") },
 }

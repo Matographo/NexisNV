@@ -4,6 +4,9 @@ require("core.functions")
 
 
 
+map("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+
+
 -- Ideas --
 map("n", "=a", "ggVG=", { desc = "Indent All" })
 
@@ -146,8 +149,8 @@ map("n", "<leader>ghml", ":Gh milestone list<CR>", { desc = "List Milestones" })
 
 
 -- Dadbod --
-map("n", "<leader>db", ":DBUIToggle<CR>", { desc = "Toggle DBUI" })
-map("n", "<leader>de", ":DBUIExecuteQuery<CR>", { desc = "Execute Query" })
+map("n", "<leader>dbt", ":DBUIToggle<CR>", { desc = "Toggle DBUI" })
+map("n", "<leader>dbe", ":DBUIExecuteQuery<CR>", { desc = "Execute Query" })
 
 
 
@@ -162,3 +165,16 @@ vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)
 map("n", "<leader>htt", ":Hardtime toggle<CR>", { desc = "Toggle Hardtime" })
 map("n", "<leader>hte", ":Hardtime enable<CR>", { desc = "Toggle Cursor" })
 map("n", "<leader>htd", ":Hardtime disable<CR>", { desc = "Toggle Cursor Line" })
+
+
+
+-- DAP --
+vim.keymap.set("n", "<F5>", function() require("dap").continue() end)
+vim.keymap.set("n", "<F10>", function() require("dap").step_over() end)
+vim.keymap.set("n", "<F11>", function() require("dap").step_into() end)
+vim.keymap.set("n", "<F12>", function() require("dap").step_out() end)
+
+
+
+-- LazyDocker --
+map("n", "<leader>ld", ":LazyDocker<CR>", { desc = "Open LazyDocker" })

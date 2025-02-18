@@ -66,8 +66,8 @@ return {
 						end
 						word = str.oneline(word)
 						if
-						    entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
-						    and string.sub(vim_item.abbr, -1, -1) == "~"
+							entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+							and string.sub(vim_item.abbr, -1, -1) == "~"
 						then
 							word = word .. "~"
 						end
@@ -85,6 +85,7 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<Right>"] = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping.select_next_item(),
 				["<S-Tab>"] = cmp.mapping.select_prev_item(),
 				["<C-k>"] = cmp.mapping.select_prev_item(),
