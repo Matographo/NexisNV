@@ -178,3 +178,9 @@ vim.keymap.set("n", "<F12>", function() require("dap").step_out() end)
 
 -- LazyDocker --
 map("n", "<leader>ld", ":LazyDocker<CR>", { desc = "Open LazyDocker" })
+
+
+-- Avante --
+map("n", "<leader>ask", ":AvanteAsk<CR>", { desc = "Open AI Assistent" })
+map("n", "<leader>ast", ":AvanteToggle<CR>", { desc = "Reset AI Assistent" })
+

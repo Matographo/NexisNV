@@ -30,4 +30,5 @@ return {
 	{ require("nexisnv.vimtex") },
 	{ require("nexisnv.align") },
 	{ require("nexisnv.lazydocker") },
+	{ require("nexisnv.avante") },
 }
