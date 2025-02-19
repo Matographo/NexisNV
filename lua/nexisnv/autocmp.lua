@@ -33,6 +33,7 @@ return {
 				{ name = "path" },
 				{ name = "emoji" },
 				{ name = "cmp_dadbod" },
+			        { name = "cmdline" },
 			}),
 			window = {
 				completion = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),

@@ -3,6 +3,7 @@ return {
 	{ require("nexisnv.themery") },
 	{ require("nexisnv.toggleterm") },
 	{ require("nexisnv.dadbod") },
+	{ require("nexisnv.noice") },
 	{ require("nexisnv.autocmp") },
 	{ require("nexisnv.telescope") },
 	{ require("nexisnv.lspconfig") },
