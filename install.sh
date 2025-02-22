@@ -26,7 +26,7 @@ if ! command -v git &> /dev/null; then
   echo "Git is not installed. Please install it first." && exit 1
 fi
 if ! command -v nvim &> /dev/null; then
-  echo "Neovim is not installed. Installing now..." && exit 1
+  echo "Neovim is not installed. Please install it first" && exit 1
   return
 fi
 
