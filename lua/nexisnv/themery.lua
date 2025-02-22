@@ -13,7 +13,7 @@ return {
 				"nightfox",
 				"onedark",
 			},
-			livePreview = true, -- Themes werden live angewendet
+			livePreview = true,
 		})
 	end
 

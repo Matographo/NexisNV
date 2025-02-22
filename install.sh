@@ -1,5 +1,23 @@
 #!/bin/bash
 
+###############################################################################
+# NexisNV Installation Script
+#
+# This script installs the NexisNV Neovim configuration by moving all files
+# from the repository to the Neovim configuration directory.
+#
+# It also backs up any existing Neovim configuration files into a ZIP archive
+# within the Neovim configuration directory. After installing the configuration,
+# it launches Neovim to install all plugins and prints a completion message.
+#
+# Finally, it deletes the repository directory to keep the configuration clean.
+#
+# Note: This script requires Git and Neovim to be installed on the system.
+#
+# For any issues with the installation, please open an issue at:
+# https://github.com/Matographo/NexisNV
+###############################################################################
+
 echo "Starting NexisNV Installation..."
 
 # Ensure required dependencies are installed
@@ -29,7 +47,7 @@ if [ "$(ls -1 $NVIM_CONFIG | wc -l)" -gt 1 ]; then
   done
 
   # Zip the backup
-  zip -r "$NVIM_CONFIG/old_config.zip" "$BACKUP_DIR"
+  zip -r "$NVIM_CONFIG/backup.zip" "$BACKUP_DIR"
   rm -rf "$BACKUP_DIR"
   echo "Backup created at: $BACKUP_DIR"
 fi

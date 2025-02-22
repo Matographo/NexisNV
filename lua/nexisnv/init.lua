@@ -1,3 +1,11 @@
+-- This is the main entry point for the Plugin configuration.
+-- Every Plugin configuration should be required here.
+-- This is the Main Config for NexisNV but if you want to disable some plugins
+-- feel free to comment out the require statement for that plugin.
+-- If you want to add a new plugin, you can add it in the folder plugins
+-- because there are non-NexisNV plugins.
+
+
 return {
 	{ require("nexisnv.dashboard") },
 	{ require("nexisnv.themery") },

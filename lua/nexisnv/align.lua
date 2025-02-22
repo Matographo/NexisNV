@@ -4,8 +4,6 @@ return {
 	lazy = true,
 	config = function()
 		require('align').setup {
-			-- Add your configuration here
-			-- jalksjd
 		}
 	end
 }

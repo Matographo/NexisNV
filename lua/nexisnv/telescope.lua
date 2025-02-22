@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	dependencies = { "nvim-lua/plenary.nvim" }, -- Plenary ist eine Abhängigkeit für Telescope
-	cmd = "Telescope",                   -- Lazy-load: Nur laden, wenn `:Telescope` aufgerufen wird
+	dependencies = { "nvim-lua/plenary.nvim" },
+	cmd = "Telescope",
 	keys = {
 		{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "🔍 Finde Datei" },
 		{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "🔍 Durchsuche Inhalte" },
@@ -25,25 +25,24 @@ return {
 				selection_caret = "󰅂  ",
 				pickers = {
 					find_files = {
-						theme = "dropdown", -- Dropdown für eine kompakte Ansicht
+						theme = "dropdown",
 					},
 					live_grep = {
-						theme = "ivy", -- Ivy für eine bessere Sucherfahrung
+						theme = "ivy",
 					},
 				},
 				mappings = {
 					i = {
-						["<CR>"] = actions.select_default + actions.center, -- Direkt öffnen & zentrieren
-						["<C-x>"] = actions.select_horizontal, -- Datei im horizontalen Split öffnen
-						["<C-v>"] = actions.select_vertical, -- Datei im vertikalen Split öffnen
-						["<C-t>"] = actions.select_tab, -- Datei in neuem Tab öffnen
+						["<CR>"] = actions.select_default + actions.center,
+						["<C-x>"] = actions.select_horizontal,
+						["<C-v>"] = actions.select_vertical,
+						["<C-t>"] = actions.select_tab,
 					},
 					n = {
-						["<CR>"] = actions.select_default + actions.center, -- Direkt öffnen im Normal Mode
+						["<CR>"] = actions.select_default + actions.center,
 					},
 				},
 			},
 		})
 	end
-
 }

@@ -1,7 +1,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*",
-  lazy = false,  -- Setze auf false, damit es immer geladen wird!
+  lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -11,9 +11,8 @@ return {
       workspaces = {
         {
           name = "Uni",
-          path = vim.fn.expand("~/Documents/Obsidian Vaults/Uni"),  -- Dein Obsidian-Vault Pfad!
+          path = vim.fn.expand("~/Documents/Obsidian Vaults/Uni"),
         },
-	
       },
       completion = {
         nvim_cmp = true,

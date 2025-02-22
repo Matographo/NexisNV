@@ -1,6 +1,6 @@
 return {
 	'charludo/projectmgr.nvim',
-	lazy = false, -- important!
+	lazy = false,
 	config = function()
 		require("projectmgr").setup({
 			autogit = {

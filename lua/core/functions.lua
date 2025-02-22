@@ -1,3 +1,8 @@
+-- Here are functions defined that can be called from vim commands.
+-- The functions are defined as vim commands and can be called with :<command>.
+-- You can also define your own functions here and call them from vim commands.
+
+
 local newfunc = vim.api.nvim_create_user_command
 
 

@@ -4,30 +4,30 @@ return {
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons", -- Optional, für Icons
+		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
 	},
 	lazy = true,
 	cmd = "Neotree",
 	config = function()
 		require("neo-tree").setup({
-			close_if_last_window = true, -- Schließt Neo-tree, wenn es das letzte Fenster ist
+			close_if_last_window = true,
 			popup_border_style = "rounded",
 			enable_git_status = true,
 			enable_diagnostics = true,
-			log_level = "warn",   -- 🔹 Verhindert nervige Meldungen
+			log_level = "warn",
 			filesystem = {
-				follow_current_file = { enabled = true }, -- Setze `false`, falls `true` ist
+				follow_current_file = { enabled = true },
 				hijack_netrw = true,
 				use_libuv_file_watcher = true,
-				bind_to_cwd = true, -- Verhindert, dass Neo-tree automatisch geladen wird
+				bind_to_cwd = true,
 				auto_clean_after_session_restore = false,
 			},
 			window = {
-				width = easy.width or 30, -- Standardbreite für das Neo-tree Fenster
+				width = easy.width or 30,
 				position = easy.site or "left",
 				mappings = easy.mappings or {
-					["<CR>"] = "open_with_window_picker", -- Öffnet mit Fenster-Picker
+					["<CR>"] = "open_with_window_picker",
 					["o"] = "open",
 					["h"] = "close_node",
 					["l"] = "open",
@@ -35,10 +35,9 @@ return {
 			},
 			default_component_configs = {
 				indent = {
-					with_expanders = true, -- Zeigt Expand-Icons an
+					with_expanders = true,
 				},
 			},
-			-- 🔹 Event-Handler: Schließt Neo-tree automatisch, wenn eine Datei geöffnet wird
 			event_handlers = {
 				{
 					event = "file_opened",
@@ -49,5 +48,4 @@ return {
 			}
 		})
 	end
-
 }

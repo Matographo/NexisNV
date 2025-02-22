@@ -28,8 +28,13 @@ return {
 
 
 		vim.fn.sign_define('DapBreakpoint',
-			{ text = '●', texthl = 'DapBreakpointSign', linehl = 'DapBreakpointLine', numhl =
-			'DapBreakpointNum' })
+			{
+				text = '●',
+				texthl = 'DapBreakpointSign',
+				linehl = 'DapBreakpointLine',
+				numhl =
+				'DapBreakpointNum'
+			})
 		vim.fn.sign_define('DapStopped',
 			{ text = '▶', texthl = 'DapStoppedSign', linehl = 'DapStoppedLine', numhl = 'DapStoppedNum' })
 		vim.api.nvim_set_hl(0, 'DapBreakpointSign', { fg = '#ff0000', bold = true })
@@ -37,5 +42,4 @@ return {
 		vim.keymap.set('n', "<Leader>b", dap.toggle_breakpoint, {})
 		vim.keymap.set('n', "<Leader>dc", dap.continue, {})
 	end
-
 }

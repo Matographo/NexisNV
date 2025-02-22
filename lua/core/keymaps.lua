@@ -1,3 +1,7 @@
+-- Here you can define your keymaps. If you don't like the default keymaps,
+-- you can change them here. For ease of use, you can use the `map` function.
+
+
 local map = vim.keymap.set
 local nmap = vim.api.nvim_set_keymap
 require("core.functions")
@@ -42,7 +46,7 @@ map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
 
 -- Tab control --
 map("n", "gs", ":BufferLinePick<CR>", { desc = "Choose Tab" })
-map("n", "<leader>gt", ":BufferLineCycleNext<CR>", { noremap =true, desc = "Next Tab" })
+map("n", "<leader>gt", ":BufferLineCycleNext<CR>", { noremap = true, desc = "Next Tab" })
 map("n", "gT", ":BufferLineCyclePrev<CR>", { desc = "Prev Tab" })
 map("n", "gq", ":bwipeout<CR>", { desc = "Close Tab" })
 
@@ -183,4 +187,3 @@ map("n", "<leader>ld", ":LazyDocker<CR>", { desc = "Open LazyDocker" })
 -- Avante --
 map("n", "<leader>ask", ":AvanteAsk<CR>", { desc = "Open AI Assistent" })
 map("n", "<leader>ast", ":AvanteToggle<CR>", { desc = "Reset AI Assistent" })
-

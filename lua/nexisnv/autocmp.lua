@@ -1,13 +1,13 @@
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"hrsh7th/cmp-buffer", -- Buffer-Kompletion (zuvor gesehene Wörter)
-		"hrsh7th/cmp-path", -- Pfad-Kompletion
-		"hrsh7th/cmp-cmdline", -- Kommandokompletion in `:`
-		"hrsh7th/cmp-nvim-lsp", -- LSP-Kompletion
-		"saadparwaiz1/cmp_luasnip", -- Snippet-Kompletion
-		"L3MON4D3/LuaSnip", -- Snippet-Engine
-		"rafamadriz/friendly-snippets", -- Vorgefertigte Snippets
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lsp",
+		"saadparwaiz1/cmp_luasnip",
+		"L3MON4D3/LuaSnip",
+		"rafamadriz/friendly-snippets",
 		"hrsh7th/cmp-emoji",
 		"onsails/lspkind-nvim",
 		"tpope/vim-dadbod",
@@ -20,7 +20,7 @@ return {
 		local types = require("cmp.types")
 		local str = require("cmp.utils.str")
 
-		require("luasnip.loaders.from_vscode").lazy_load() -- Lädt VSCode-Snippets
+		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
 			experimental = {
@@ -33,11 +33,17 @@ return {
 				{ name = "path" },
 				{ name = "emoji" },
 				{ name = "cmp_dadbod" },
-			        { name = "cmdline" },
+				{ name = "cmdline" },
 			}),
 			window = {
-				completion = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),
-				documentation = cmp.config.window.bordered({winhighlight = "Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"}),
+				completion = cmp.config.window.bordered({
+					winhighlight =
+					"Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"
+				}),
+				documentation = cmp.config.window.bordered({
+					winhighlight =
+					"Normal:CmpPmenu,FloatBorder:CmpPmenuBorder"
+				}),
 			},
 			formatting = {
 				fields = {
@@ -60,15 +66,14 @@ return {
 							spell = "暈",
 						})[entry.source.name]
 
-						-- Get the full snippet (and only keep first line)
 						local word = entry:get_insert_text()
 						if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
 							word = vim.lsp.util.parse_snippet(word)
 						end
 						word = str.oneline(word)
 						if
-							entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
-							and string.sub(vim_item.abbr, -1, -1) == "~"
+						    entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+						    and string.sub(vim_item.abbr, -1, -1) == "~"
 						then
 							word = word .. "~"
 						end
@@ -80,7 +85,7 @@ return {
 			},
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body) -- Verwende LuaSnip für Snippets
+					luasnip.lsp_expand(args.body)
 				end,
 			},
 			mapping = cmp.mapping.preset.insert({

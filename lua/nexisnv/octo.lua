@@ -7,71 +7,71 @@ return {
 	},
 	config = function()
 		require("octo").setup({
-			use_local_fs = false, -- use local files on right side of reviews
-			enable_builtin = false, -- shows a list of builtin actions when no action is provided
-			default_remote = { "upstream", "origin" }, -- order to try remotes
-			default_merge_method = "commit", -- default merge method which should be used for both `Octo pr merge` and merging from picker, could be `commit`, `rebase` or `squash`
-			default_delete_branch = false, -- whether to delete branch when merging pull request with either `Octo pr merge` or from picker (can be overridden with `delete`/`nodelete` argument to `Octo pr merge`)
-			ssh_aliases = {},  -- SSH aliases. e.g. `ssh_aliases = {["github.com-work"] = "github.com"}`. The key part will be interpreted as an anchored Lua pattern.
-			picker = "telescope", -- or "fzf-lua"
+			use_local_fs = false,
+			enable_builtin = false,
+			default_remote = { "upstream", "origin" },
+			default_merge_method = "commit",
+			default_delete_branch = false,
+			ssh_aliases = {},
+			picker = "telescope",
 			picker_config = {
-				use_emojis = false, -- only used by "fzf-lua" picker for now
-				mappings = { -- mappings for the pickers
+				use_emojis = false,
+				mappings = {
 					open_in_browser = { lhs = "<C-b>", desc = "open issue in browser" },
 					copy_url = { lhs = "<C-y>", desc = "copy url to system clipboard" },
 					checkout_pr = { lhs = "<C-o>", desc = "checkout pull request" },
 					merge_pr = { lhs = "<C-r>", desc = "merge pull request" },
 				},
 			},
-			comment_icon = "▎", -- comment marker
-			outdated_icon = "󰅒 ", -- outdated indicator
-			resolved_icon = " ", -- resolved indicator
-			reaction_viewer_hint_icon = " ", -- marker for user reactions
-			commands = {}, -- additional subcommands made available to `Octo` command
-			users = "search", -- Users for assignees or reviewers. Values: "search" | "mentionable" | "assignable"
-			user_icon = " ", -- user icon
-			ghost_icon = "󰊠 ", -- ghost icon
-			timeline_marker = " ", -- timeline marker
-			timeline_indent = "2", -- timeline indentation
-			right_bubble_delimiter = "", -- bubble delimiter
-			left_bubble_delimiter = "", -- bubble delimiter
-			github_hostname = "", -- GitHub Enterprise host
-			snippet_context_lines = 4, -- number or lines around commented lines
-			gh_cmd = "gh", -- Command to use when calling Github CLI
-			gh_env = {}, -- extra environment variables to pass on to GitHub CLI, can be a table or function returning a table
-			timeout = 5000, -- timeout for requests between the remote server
-			default_to_projects_v2 = false, -- use projects v2 for the `Octo card ...` command by default. Both legacy and v2 commands are available under `Octo cardlegacy ...` and `Octo cardv2 ...` respectively.
+			comment_icon = "▎",
+			outdated_icon = "󰅒 ",
+			resolved_icon = " ",
+			reaction_viewer_hint_icon = " ",
+			commands = {},
+			users = "search",
+			user_icon = " ",
+			ghost_icon = "󰊠 ",
+			timeline_marker = " ",
+			timeline_indent = "2",
+			right_bubble_delimiter = "",
+			left_bubble_delimiter = "",
+			github_hostname = "",
+			snippet_context_lines = 4,
+			gh_cmd = "gh",
+			gh_env = {},
+			timeout = 5000,
+			default_to_projects_v2 = false,
 			ui = {
-				use_signcolumn = false, -- show "modified" marks on the sign column
-				use_signstatus = true, -- show "modified" marks on the status column
+				use_signcolumn = false,
+				use_signstatus = true,
 			},
 			issues = {
-				order_by = { -- criteria to sort results of `Octo issue list`
-					field = "CREATED_AT", -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
+				order_by = {
+					field = "CREATED_AT",
 					direction =
-					"DESC" -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
+					"DESC"
 				}
 			},
 			reviews = {
-				auto_show_threads = true, -- automatically show comment threads on cursor move
-				focus             = "right", -- focus right buffer on diff open
+				auto_show_threads = true,
+				focus             = "right",
 			},
 			pull_requests = {
-				order_by = { -- criteria to sort the results of `Octo pr list`
-					field = "CREATED_AT", -- either COMMENTS, CREATED_AT or UPDATED_AT (https://docs.github.com/en/graphql/reference/enums#issueorderfield)
+				order_by = {
+					field = "CREATED_AT",
 					direction =
-					"DESC" -- either DESC or ASC (https://docs.github.com/en/graphql/reference/enums#orderdirection)
+					"DESC"
 				},
-				always_select_remote_on_create = false -- always give prompt to select base remote repo when creating PRs
+				always_select_remote_on_create = false
 			},
 			notifications = {
-				current_repo_only = false, -- show notifications for current repo only
+				current_repo_only = false,
 			},
 			file_panel = {
-				size = 10, -- changed files panel rows
-				use_icons = true -- use web-devicons in file panel (if false, nvim-web-devicons does not need to be installed)
+				size = 10,
+				use_icons = true
 			},
-			colors = { -- used for highlight groups (see Colors section below)
+			colors = {
 				white = "#ffffff",
 				grey = "#2A354C",
 				black = "#000000",
@@ -85,7 +85,7 @@ return {
 				dark_blue = "#0366d6",
 				purple = "#6f42c1",
 			},
-			mappings_disable_default = false, -- disable default mappings if true, but will still adapt user mappings
+			mappings_disable_default = false,
 			mappings = {
 				issue = {
 					close_issue = { lhs = "<localleader>ic", desc = "close issue" },

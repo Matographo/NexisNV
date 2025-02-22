@@ -15,10 +15,10 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("dashboard").setup({
-			theme = easy.theme or "hyper", -- Alternativ: hyper, doom, default
+			theme = easy.theme or "hyper",
 			config = {
 				header = easy.logo or {
-					"","","","","",
+					"", "", "", "", "",
 					"███╗   ██╗███████╗██╗  ██╗██╗███████╗███╗   ██╗██╗   ██╗",
 					"████╗  ██║██╔════╝╚██╗██╔╝██║██╔════╝████╗  ██║██║   ██║",
 					"██╔██╗ ██║█████╗   ╚███╔╝ ██║███████╗██╔██╗ ██║██║   ██║",

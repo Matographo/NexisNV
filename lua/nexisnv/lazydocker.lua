@@ -28,7 +28,7 @@ return {
 				},
 			},
 		}
-	}, -- automatically calls `require("lazydocker").setup()`
+	},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 	},

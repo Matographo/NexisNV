@@ -12,13 +12,13 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"clangd", -- C / C++
-				"jdtls", -- Java
-				"lua_ls", -- Lua
+				"clangd",
+				"jdtls",
+				"lua_ls",
 				"svelte",
 				"graphql",
 				"emmet_ls",
-				"pyright", -- Python
+				"pyright",
 				"html",
 				"cssls",
 				"jsonls",
@@ -26,5 +26,4 @@ return {
 			}
 		})
 	end
-
 }
