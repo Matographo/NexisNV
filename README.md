@@ -30,17 +30,6 @@ Before installing **NexisNV**, make sure you have the following:
 - **Git** installed on your system
 
 
-##### For Debian/Ubuntu
-```sh
-sudo apt install neovim
-```
-
-##### For macOS (using Homebrew)
-```sh
-brew install neovim
-```
-
-
 ### Installation Steps
 
 1. If you want your previous Neovim Config, make sure to backup your current Neovim configuration. NexisNV will standardly zip your current configuration and save it in the `~/.config/nvim/backup.zip` directory.
